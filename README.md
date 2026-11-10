@@ -14,6 +14,10 @@ support.
 
 - `docs/forehand-analysis-workflow.md` — canonical product and data contract
   for the first review flow.
+- `docs/player-coach-workspace-prototype.md` — walkthrough and scope for the
+  clickable player-coach workspace reference.
+- `docs/player-coach-workspace-prototype.html` — self-contained clickable
+  prototype; open it directly in a browser.
 - `AGENTS.md` — instructions for contributors and coding agents working in
   this repository.
 
