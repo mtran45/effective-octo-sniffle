@@ -37,16 +37,16 @@ the coach is editing. State transitions must record actor and timestamp.
 
 The upload cannot begin analysis until these fields are present:
 
-| Field | Type | Requirement |
-| --- | --- | --- |
-| `playerId` | ID | Existing player being reviewed |
-| `videoAssetId` | ID | Stored source video |
-| `recordedAt` | ISO timestamp | When the clip was recorded |
-| `handedness` | `right \| left` | Player's hitting hand |
-| `viewAngle` | `side \| rear \| front \| diagonal \| unknown` | Camera position |
-| `courtContext` | `singles \| doubles \| drill \| unknown` | Context of the shot |
-| `shotIntent` | `drive \| roll \| volley \| return \| unknown` | Intended forehand |
-| `clipStartMs`, `clipEndMs` | integers | Non-negative, end greater than start |
+| Field                      | Type                                           | Requirement                          |
+| -------------------------- | ---------------------------------------------- | ------------------------------------ |
+| `playerId`                 | ID                                             | Existing player being reviewed       |
+| `videoAssetId`             | ID                                             | Stored source video                  |
+| `recordedAt`               | ISO timestamp                                  | When the clip was recorded           |
+| `handedness`               | `right \| left`                                | Player's hitting hand                |
+| `viewAngle`                | `side \| rear \| front \| diagonal \| unknown` | Camera position                      |
+| `courtContext`             | `singles \| doubles \| drill \| unknown`       | Context of the shot                  |
+| `shotIntent`               | `drive \| roll \| volley \| return \| unknown` | Intended forehand                    |
+| `clipStartMs`, `clipEndMs` | integers                                       | Non-negative, end greater than start |
 
 The uploader should also capture optional `sessionId`, `venue`, `deviceModel`,
 `fps`, `notes`, and `consentConfirmed`. `durationMs`, dimensions, codec, and
@@ -60,16 +60,16 @@ Analyze each checkpoint independently. A checkpoint may be `observed`,
 `not_observed`, or `insufficient_evidence`; never infer a fault from missing
 visibility.
 
-| Key | Checkpoint | Evidence to look for |
-| --- | --- | --- |
-| `ready_position` | Preparation | Balanced base, paddle prepared, eyes tracking the ball |
-| `unit_turn` | Early loading | Shoulders and hips turn together; non-paddle arm supports spacing |
-| `spacing` | Contact setup | Player reaches a comfortable contact distance rather than crowding |
-| `lower_body` | Load and transfer | Leg load and movement support the shot; weight is not stranded behind |
-| `swing_path` | Acceleration | Paddle path matches intent, with a repeatable low-to-high path for a drive/roll |
-| `contact_point` | Contact | Contact is sufficiently forward and near the intended height |
-| `head_and_balance` | Stability | Head remains relatively quiet and finish is balanced |
-| `follow_through` | Completion | Finish is controlled and supports recovery for the next ball |
+| Key                | Checkpoint        | Evidence to look for                                                            |
+| ------------------ | ----------------- | ------------------------------------------------------------------------------- |
+| `ready_position`   | Preparation       | Balanced base, paddle prepared, eyes tracking the ball                          |
+| `unit_turn`        | Early loading     | Shoulders and hips turn together; non-paddle arm supports spacing               |
+| `spacing`          | Contact setup     | Player reaches a comfortable contact distance rather than crowding              |
+| `lower_body`       | Load and transfer | Leg load and movement support the shot; weight is not stranded behind           |
+| `swing_path`       | Acceleration      | Paddle path matches intent, with a repeatable low-to-high path for a drive/roll |
+| `contact_point`    | Contact           | Contact is sufficiently forward and near the intended height                    |
+| `head_and_balance` | Stability         | Head remains relatively quiet and finish is balanced                            |
+| `follow_through`   | Completion        | Finish is controlled and supports recovery for the next ball                    |
 
 The initial analyzer should return at most three actionable findings per clip,
 prioritized as `high`, `medium`, or `low`. Findings must cite one or more
