@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rally — Player coaching workspace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">✳</span><span>rally</span><span class="beta">BETA</span></div>
+        <div class="coach-switcher"><div class="avatar coach">MC</div><div><strong>Maya Chen</strong><small>Coach workspace</small></div><span class="chevron">⌄</span></div>
+        <nav>
+          <p class="nav-label">Workspace</p>
+          <button class="nav-item active" data-view="review"><span>◉</span> Review</button>
+          <button class="nav-item" data-view="players"><span>♙</span> Players <em>3</em></button>
+          <button class="nav-item" data-view="library"><span>▣</span> Drill library</button>
+          <button class="nav-item" data-view="history"><span>↗</span> Progress history</button>
+        </nav>
+        <div class="sidebar-bottom"><button class="help">? <span>Help center</span></button><div class="mini-profile"><div class="avatar player-avatar">MC</div><span>My account</span><span class="chevron">⌄</span></div></div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar"><div class="breadcrumbs"><span>Players</span><b>/</b><strong>Jordan Lee</strong><b>/</b><strong>Forehand review</strong></div><button class="icon-button" aria-label="Notifications">♢<i></i></button></header>
+
+        <section class="page" id="review-view">
+          <div class="page-heading"><div><p class="eyebrow">MONDAY, OCTOBER 14, 2024</p><h1>Jordan’s forehand review</h1><p class="subheading">A focused look at your split-step, contact point, and follow-through.</p></div><div class="heading-actions"><button class="secondary-button" id="share-btn">↗ Share review</button><button class="primary-button" id="complete-btn">Complete review <span>→</span></button></div></div>
+          <div class="player-tabs"><button class="player-tab active"><div class="avatar jordan">JL</div><span><strong>Jordan Lee</strong><small>Last active today</small></span><i>✓</i></button><button class="player-tab"><div class="avatar sam">SK</div><span><strong>Sam Kim</strong><small>Last active yesterday</small></span></button><button class="player-tab"><div class="avatar priya">PS</div><span><strong>Priya Shah</strong><small>Last active Oct 11</small></span></button><button class="add-player">+ Add player</button></div>
+
+          <div class="review-grid">
+            <div class="main-column">
+              <section class="card video-card"><div class="card-top"><div><p class="eyebrow">VIDEO REVIEW <span class="status-pill">AI ANALYSIS READY</span></p><h2>Baseline forehand · Clip 01</h2></div><button class="more">•••</button></div><div class="video-stage"><div class="court-lines"></div><div class="player-silhouette">◒</div><div class="video-label">0:08 / 0:14</div><button class="play-button" id="play-btn">▶</button><div class="video-controls"><span>▮▮</span><div class="scrubber"><i></i></div><span>⌗</span><span>⛶</span></div></div><div class="timeline"><span>0:00</span><div class="timeline-track"><i class="marker m1" data-finding="setup"></i><i class="marker m2" data-finding="contact"></i><i class="marker m3" data-finding="finish"></i></div><span>0:14</span></div><div class="video-meta"><span>Uploaded Oct 14, 2024</span><span>·</span><span>Side view</span><button class="text-button" id="upload-btn">＋ Replace video</button><input id="file-input" type="file" accept="video/*" hidden /></div></section>
+              <section class="card findings-card"><div class="card-top"><div><p class="eyebrow">TECHNIQUE FINDINGS</p><h2>Three moments worth your attention</h2></div><span class="confidence">● 87% confident</span></div><div class="finding-list"><button class="finding active" data-finding="setup"><span class="finding-number">01</span><span class="finding-copy"><strong>Get set a little earlier</strong><small>Your split-step lands after the ball crosses the net. Try to arrive in your athletic stance before the bounce.</small></span><span class="finding-time">00:02 <b>›</b></span></button><button class="finding" data-finding="contact"><span class="finding-number">02</span><span class="finding-copy"><strong>Meet the ball out in front</strong><small>Contact is close to your body on 4 of 5 swings. Create more space with a small step to the ball.</small></span><span class="finding-time">00:07 <b>›</b></span></button><button class="finding" data-finding="finish"><span class="finding-number">03</span><span class="finding-copy"><strong>Finish high and across</strong><small>Your finish is consistent. Let the racquet travel up toward your opposite shoulder.</small></span><span class="finding-time">00:11 <b>›</b></span></button></div><button class="outline-button" id="add-finding">＋ Add a coach finding</button></section>
+              <section class="card notes-card"><div class="card-top"><div><p class="eyebrow">COACH NOTES</p><h2>A note from Maya</h2></div><span class="saved" id="saved-state">Saved just now</span></div><textarea id="coach-note">You’re doing a great job keeping your eye on the ball, Jordan. For the next session, focus on arriving early and giving yourself a little more room at contact. That extra space will make your swing feel effortless.</textarea><div class="note-footer"><span>Visible to Jordan</span><button class="primary-button small" id="save-note">Save note <span>→</span></button></div></section>
+            </div>
+            <aside class="right-column"><section class="card assign-card"><div class="card-top"><div><p class="eyebrow">NEXT UP</p><h2>Keep the momentum</h2></div><span class="spark">✦</span></div><div class="drill-preview"><div class="drill-art"><span>↗</span></div><div><span class="tag">DRILL · 10 MIN</span><h3>Early contact shadow swings</h3><p>Build space and rhythm without a ball.</p></div></div><button class="primary-button full" id="assign-btn">Assign this drill <span>→</span></button><button class="link-button" id="change-drill">Browse drill library</button></section><section class="card history-card"><div class="card-top"><div><p class="eyebrow">PLAYER PROGRESS</p><h2>Jordan’s journey</h2></div><button class="more">•••</button></div><div class="progress-stat"><strong>+18%</strong><span>forehand consistency</span><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div></div><div class="history-row"><div class="history-dot green"></div><div><strong>Oct 14 · Forehand review</strong><small>3 findings · 1 drill assigned</small></div><span>›</span></div><div class="history-row"><div class="history-dot purple"></div><div><strong>Oct 07 · Serve & return</strong><small>2 findings · 2 drills completed</small></div><span>›</span></div><button class="link-button" data-view="history">View full progress history →</button></section><section class="card checkin-card"><span class="quote">“</span><p>Small adjustments become big changes when you repeat them.</p><span>— Maya Chen</span></section></aside>
+          </div>
+        </section>
+        <section class="empty-view" id="other-view"><div class="empty-icon">✳</div><p class="eyebrow">RALLY WORKSPACE</p><h1 id="empty-title">Players</h1><p>This area is ready for your next coaching session.</p><button class="primary-button" data-view="review">Back to review <span>→</span></button></section>
+      </main>
+    </div>
+    <div class="toast" id="toast"><span>✓</span><span id="toast-text">Drill assigned to Jordan</span></div>
+    <script src="app.js"></script>
+  </body>
+</html>
