@@ -17,6 +17,14 @@ support.
 - `AGENTS.md` — instructions for contributors and coding agents working in
   this repository.
 
-There is no runnable application in this foundation yet. When implementation
-starts, update the workflow contract when product behavior changes and keep
-this README focused on orientation and entry points.
+## Run locally
+
+Install dependencies, then start the Vite development server:
+
+```sh
+npm install
+npm start
+```
+
+The app is available at `http://localhost:5173`. Use `npm run build` to create
+a production build and `npm run preview` to serve that build locally.
